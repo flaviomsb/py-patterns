@@ -14,3 +14,7 @@ class Employee(User):
     @classmethod
     def company(cls):
         return cls.company_name
+
+    @staticmethod
+    def work_schedule():
+        return "40 hours / week"
