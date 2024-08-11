@@ -21,7 +21,3 @@ class User:
 
     def display_name(self) -> str:
         return f"{self.__name} ({self.uuid})"
-
-
-user = User("John Doe", 87593)
-print(user.display_name())
