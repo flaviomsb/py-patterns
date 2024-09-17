@@ -13,3 +13,9 @@ class TestEmployee(unittest.TestCase):
 
     def test_work_schedule(self):
         self.assertEqual(Employee.work_schedule(), "40 hours / week")
+
+    def test_str_dunder(self):
+        self.assertEqual(
+            str(Employee(name="Paul Doe", uuid=212392, role="Systems Engineer")),
+            "Employee with name Paul Doe and uuid 000212392 with role Systems Engineer",
+        )
