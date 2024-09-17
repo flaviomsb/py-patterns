@@ -18,3 +18,6 @@ class Employee(User):
     @staticmethod
     def work_schedule():
         return "40 hours / week"
+
+    def __str__(self) -> str:
+        return "{0} with role {1}".format(super().__str__(), self._role)
