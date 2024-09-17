@@ -21,3 +21,9 @@ class TestUser(unittest.TestCase):
     def test_display_name(self):
         _user = User(name="Paul Doe", uuid=212392)
         self.assertEqual(_user.display_name(), "Paul Doe (000212392)")
+
+    def test_str_dunder(self):
+        self.assertEqual(
+            str(User(name="Paul Doe", uuid=212392)),
+            "User with name Paul Doe and uuid 000212392",
+        )
