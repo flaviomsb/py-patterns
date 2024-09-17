@@ -21,3 +21,8 @@ class User:
 
     def display_name(self) -> str:
         return f"{self.__name} ({self.uuid})"
+
+    def __str__(self) -> str:
+        return "{0} with name {1} and uuid {2}".format(
+            self.__class__.__name__, self.__name, self.__uuid
+        )
