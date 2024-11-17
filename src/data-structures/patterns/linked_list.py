@@ -123,3 +123,9 @@ class LinkedList:
             temp.next = before
             before = temp
             temp = after
+
+    def print_list(self):
+        node = self.head
+        for _ in range(self.length):
+            print(node)
+            node = node.next
