@@ -61,3 +61,19 @@ class LinkedList:
             self.tail = None
 
         return node
+
+    def get(self, index: int):
+        if index == 0 or index >= self.length:
+            return None
+
+        node = self.head
+        for _ in range(index):
+            node = node.next
+        return node
+
+    def set(self, index: int, value):
+        node = self.get(index)
+        if node:
+            node.value = value
+            return True
+        return False
