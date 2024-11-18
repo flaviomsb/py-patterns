@@ -1,5 +1,6 @@
 from ll_node import LLNode
 
+
 class LinkedList:
     def __init__(self) -> None:
         self.head = None
@@ -23,7 +24,7 @@ class LinkedList:
 
         previous = self.head
         current = self.head
-        while (current.next):
+        while current.next:
             previous = current
             current = current.next
 
@@ -31,7 +32,7 @@ class LinkedList:
         self.tail.next = None
         self.length -= 1
 
-        if self.length is 0:
+        if self.length == 0:
             self.head = None
             self.tail = None
 
@@ -45,7 +46,7 @@ class LinkedList:
         else:
             new_node.next = self.head
             self.head = new_node
-        self.length +=1
+        self.length += 1
         return True
 
     def pop_first(self):
