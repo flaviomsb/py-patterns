@@ -1,4 +1,5 @@
-from data_structures import LinkedList
+from linked_list import LinkedList
+
 
 def find_kth_from_end(linked_list: LinkedList, kth: int):
     slow = linked_list.head
@@ -9,10 +10,8 @@ def find_kth_from_end(linked_list: LinkedList, kth: int):
             return None
         fast = fast.next
 
-    while(fast is not None):
+    while fast is not None:
         slow = slow.next
         fast = fast.next
 
     return slow
-
-
