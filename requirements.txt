@@ -2,6 +2,8 @@ pandas
 seaborn
 matplotlib
 tensorflow
+tensorflow-macos
+tensorflow-metal
 scikit-learn
 xlrd
 xgboost
