@@ -1,4 +1,4 @@
-from ll_node import LLNode
+from linked_list_node import LinkedListNode
 
 
 class LinkedList:
@@ -8,11 +8,12 @@ class LinkedList:
         self.length = 0
 
     def append(self, value):
-        new_node = LLNode(value)
+        new_node = LinkedListNode(value)
         if self.head is None:
             self.head = new_node
             self.tail = new_node
         else:
+            assert self.tail is not None
             self.tail.next = new_node
             self.tail = new_node
         self.length += 1
@@ -39,7 +40,7 @@ class LinkedList:
         return current
 
     def prepend(self, value):
-        new_node = LLNode(value)
+        new_node = LinkedListNode(value)
         if self.length == 0:
             self.head = new_node
             self.tail = new_node
@@ -69,6 +70,7 @@ class LinkedList:
 
         node = self.head
         for _ in range(index):
+            assert node is not None
             node = node.next
         return node
 
@@ -87,7 +89,7 @@ class LinkedList:
         if index == self.length:
             return self.append(value)
 
-        new_node = LLNode(value)
+        new_node = LinkedListNode(value)
         temp = self.get(index - 1)
         if temp:
             new_node.next = temp.next
@@ -105,7 +107,9 @@ class LinkedList:
             return self.pop()
 
         prev = self.get(index - 1)
+        assert prev is not None
         toRemove = prev.next
+        assert toRemove is not None
         prev.next = toRemove.next
         toRemove.next = None
         self.length -= 1
@@ -117,9 +121,12 @@ class LinkedList:
         self.head = self.tail
         self.tail = temp
 
+        assert temp is not None
+
         after = temp.next
         before = None
         for _ in range(self.length):
+            assert temp is not None
             after = temp.next
             temp.next = before
             before = temp
@@ -129,4 +136,5 @@ class LinkedList:
         node = self.head
         for _ in range(self.length):
             print(node)
+            assert node is not None
             node = node.next

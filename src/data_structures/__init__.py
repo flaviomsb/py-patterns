@@ -1,4 +1,4 @@
 from .linked_list import LinkedList
-from .ll_node import LLNode
+from .linked_list_node import LinkedListNode
 
-__all__ = ["LinkedList", "LLNode"]
+__all__ = ["LinkedList", "LinkedListNode"]
