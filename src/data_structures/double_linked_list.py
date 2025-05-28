@@ -36,7 +36,7 @@ class DoublyLinkedList:
     def pop(self):
         if self.head is None:
             return None
-        
+
         assert self.tail is DoublyLinkedListNode
         node = self.tail
 
@@ -48,5 +48,5 @@ class DoublyLinkedList:
             self.tail.next = None
             node.previous = None
         self.length -= 1
-       
+
         return node
