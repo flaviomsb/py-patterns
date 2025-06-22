@@ -87,3 +87,10 @@ class DoublyLinkedList:
                 node = node.previous
 
         return node
+
+    def set_at(self, index, value):
+        node = self.get(index)
+        if node:
+            node.value = value
+            return True
+        return False
