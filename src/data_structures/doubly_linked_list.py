@@ -94,3 +94,25 @@ class DoublyLinkedList:
             node.value = value
             return True
         return False
+
+    def insert_at(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+
+        if index == 0:
+            return self.prepend(value)
+
+        if index == self.length:
+            return self.append(value)
+
+        new_node = DoublyLinkedListNode(value)
+        before = self.get(index - 1)
+        assert before is DoublyLinkedListNode
+        after = before.next
+        new_node.previous = before
+        new_node.next = after
+        before.next = new_node
+        after.previous = new_node
+        self.length += 1
+
+        return True
