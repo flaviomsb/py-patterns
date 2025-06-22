@@ -68,3 +68,22 @@ class DoublyLinkedList:
         self.length -= 1
 
         return node
+
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+
+        node = self.head
+        # if index is in the first half of list
+        if index < self.length / 2:
+            for _ in range(index):
+                assert node is DoublyLinkedListNode
+                node = node.next
+        # else if index is closer to the tail (second half of the list) 
+        else:
+            node = self.tail
+            for _ in range(self.length - 1, index, -1):
+                assert node is DoublyLinkedListNode
+                node = node.previous
+
+        return node
