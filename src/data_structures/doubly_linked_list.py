@@ -133,3 +133,17 @@ class DoublyLinkedList:
         node.next = None
         self.length -= 1
         return node
+
+    def is_palindrome(self):
+        if self.length <= 1:
+            return True
+
+        forward_node = self.head
+        backward_node = self.tail
+        assert forward_node and backward_node is DoublyLinkedListNode
+        for _ in range(self.length // 2):
+            if forward_node.value != backward_node.value:
+                return False
+            forward_node.next
+            backward_node.previous
+        return True
