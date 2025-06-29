@@ -140,10 +140,30 @@ class DoublyLinkedList:
 
         forward_node = self.head
         backward_node = self.tail
-        assert forward_node and backward_node is DoublyLinkedListNode
+        assert forward_node is DoublyLinkedListNode
+        assert backward_node is DoublyLinkedListNode
         for _ in range(self.length // 2):
             if forward_node.value != backward_node.value:
                 return False
             forward_node.next
             backward_node.previous
         return True
+
+    def reverse(self):
+        if self.length <= 1:
+            return None
+
+        old_head = self.head
+        old_tail = self.tail
+        assert old_head is DoublyLinkedListNode
+        temp = old_head
+
+        while temp is not None:
+            temp_next = temp.next
+            temp.next = temp.previous
+            temp.previous = temp_next
+            temp = temp_next
+
+        self.head = old_tail
+        self.tail = old_head
+
