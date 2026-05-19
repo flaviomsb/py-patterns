@@ -1,6 +1,4 @@
-import tensorflow as tf
-import os
-import random
-import numpy as np
+import torch
 
-print("Number of GPUs available", len(tf.config.list_physical_devices('GPU')))
+print("MPS available:", torch.backends.mps.is_available())
+print("MPS built:", torch.backends.mps.is_built())
